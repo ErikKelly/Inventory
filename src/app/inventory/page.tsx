@@ -1,7 +1,7 @@
 "use client";  // This is important for using React hooks
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
+import Image from 'next/image';
 
 interface InventoryItem {
   [key: string]: string;  
@@ -93,7 +93,7 @@ export default function InventoryPage() {
         <td key={header} className="py-2 px-4 border-b border-gray-300">
           {isImageUrl(item[header]) ? (
             // If the value looks like an image URL, render as an image
-            <img 
+<Image 
               src={item[header]} 
               alt={`Product image`}
               className="w-24 h-24 object-contain" 
