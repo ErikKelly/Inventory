@@ -49,7 +49,7 @@ export default function InventoryPage() {
     });
 }, []);
   
-  if (loading) return <div className="p-4">Loading inventory...</div>;
+  if (loading) return <div className="p-4">Loading collection...</div>;
   if (error) return <div className="p-4 text-red-500">Error: {error}</div>;
 
   // Get the headers once from the first item
