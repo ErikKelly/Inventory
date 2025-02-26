@@ -6,13 +6,11 @@ interface InventoryItem {
   [key: string]: string;
 }
 
-export default function InventoryPage() {
-
-
-
+export default function Home() {
   return (
     <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">HOME</h1>
+      <h1 className="text-3xl font-bold">Welcome to My App</h1>
+      <p className="mt-4">This is the homepage.</p>
     </div>
   );
 }

@@ -7,7 +7,7 @@ interface InventoryItem {
   [key: string]: string;  
 }
 
-export default function InventoryPage() {
+export default function PersonalCollection() {
   const [inventory, setInventory] = useState<InventoryItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -70,10 +70,12 @@ export default function InventoryPage() {
   
 
   return (
-    <div className="p-4">
-      <h1 className="text-2xl font-bold mb-4">Personal Collection</h1>
-      
-      <div className="mt-4">
+    <div className="relative">
+        <div className="p-4">
+        <h1 className="text-2xl font-bold mb-4">Personal Collection</h1>
+        </div>
+
+      <div className="overflow-x-auto px-4">
         <table className="min-w-full bg-white border border-gray-300">
           <thead>
             <tr>
@@ -95,6 +97,8 @@ export default function InventoryPage() {
               src={item[header]} 
               alt={`Product image`}
               className="w-24 h-24 object-contain" 
+              width={96}  
+              height={96} 
             />
           ) : (
             // Otherwise render as text
