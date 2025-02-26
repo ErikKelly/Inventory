@@ -12,7 +12,7 @@ export default function Navbar() {
     <nav className="fixed top-0 left-0 right-0 bg-gray-800 p-4 z-10">
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="text-white font-bold text-xl">
-          My Site
+          EK's Cards
         </Link>
         
         {/* Mobile menu button */}
@@ -46,10 +46,10 @@ export default function Navbar() {
             Inventory
           </Link>
           <Link 
-            href="/about" 
-            className={`${pathname === '/about' ? 'text-white' : 'text-gray-300 hover:text-white'} px-3 py-2`}
+            href="/pc" 
+            className={`${pathname === '/pc' ? 'text-white' : 'text-gray-300 hover:text-white'} px-3 py-2`}
           >
-            About
+            Personal Collection
           </Link>
         </div>
       </div>
@@ -74,7 +74,7 @@ export default function Navbar() {
             </Link>
             <Link 
               href="/pc" 
-              className={`${pathname === '/about' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'} px-3 py-2 rounded-md`}
+              className={`${pathname === '/pc' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'} px-3 py-2 rounded-md`}
               onClick={() => setIsOpen(false)}
             >
               Personal Collection
