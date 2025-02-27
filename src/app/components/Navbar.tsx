@@ -40,16 +40,22 @@ export default function Navbar() {
             Home
           </Link>
           <Link 
-            href="/inventory" 
-            className={`${pathname === '/inventory' ? 'text-white' : 'text-gray-300 hover:text-white'} px-3 py-2`}
-          >
-            Inventory
-          </Link>
-          <Link 
-            href="/pc" 
+            href="/pc-graded" 
             className={`${pathname === '/pc' ? 'text-white' : 'text-gray-300 hover:text-white'} px-3 py-2`}
           >
-            Personal Collection
+            Graded Cards
+          </Link>
+          <Link 
+            href="/pc-sets" 
+            className={`${pathname === '/pc' ? 'text-white' : 'text-gray-300 hover:text-white'} px-3 py-2`}
+          >
+            Complete Sets
+          </Link>
+          <Link 
+            href="/pc-raw" 
+            className={`${pathname === '/inventory' ? 'text-white' : 'text-gray-300 hover:text-white'} px-3 py-2`}
+          >
+            Ungraded Cards
           </Link>
         </div>
       </div>
@@ -65,19 +71,27 @@ export default function Navbar() {
             >
               Home
             </Link>
+
             <Link 
-              href="/inventory" 
-              className={`${pathname === '/inventory' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'} px-3 py-2 rounded-md`}
-              onClick={() => setIsOpen(false)}
-            >
-              Inventory
-            </Link>
-            <Link 
-              href="/pc" 
+              href="/pc-graded" 
               className={`${pathname === '/pc' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'} px-3 py-2 rounded-md`}
               onClick={() => setIsOpen(false)}
             >
-              Personal Collection
+              Graded Cards
+            </Link>
+            <Link 
+              href="/pc-sets" 
+              className={`${pathname === '/pc' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'} px-3 py-2 rounded-md`}
+              onClick={() => setIsOpen(false)}
+            >
+              Complete Sets
+            </Link>
+            <Link 
+              href="/pc-raw" 
+              className={`${pathname === '/inventory' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'} px-3 py-2 rounded-md`}
+              onClick={() => setIsOpen(false)}
+            >
+              Ungraded Cards
             </Link>
           </div>
         </div>

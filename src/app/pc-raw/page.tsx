@@ -7,7 +7,7 @@ interface InventoryItem {
   [key: string]: string;  
 }
 
-export default function InventoryPage() {
+export default function PersonalCollectionRaw() {
   const [inventory, setInventory] = useState<InventoryItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -15,7 +15,7 @@ export default function InventoryPage() {
   useEffect(() => {
     // Replace with your actual spreadsheet ID
     const SHEET_ID = '1gUdbhzWjdRmcet7CX592wJ25GN_CW-k1J08wERqzAGY';
-    const SHEET_NAME = 'CardInventory';
+    const SHEET_NAME = 'PC-Raw';
     
     // Public spreadsheet URL
     const sheetUrl = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&sheet=${encodeURIComponent(SHEET_NAME)}`;
@@ -70,12 +70,9 @@ export default function InventoryPage() {
   
 
   return (
-    <div className="relative">
+    <div className="relative py-5">
         <div className="p-4">
-        <h1 className="text-2xl font-bold mb-4">Inventory Items</h1>
-      <div className="mt-4">
-        To inquire about any cards on this list, please contact mail@somemail.com
-      </div>
+        <h1 className="text-2xl font-bold mb-4">Personal Collection - Raw</h1>
         </div>
 
       <div className="overflow-x-auto px-4">
