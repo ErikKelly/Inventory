@@ -7,10 +7,19 @@ interface InventoryItem {
 }
 
 export default function Home() {
+
+  const [backgroundColor, setBackgroundColor] = useState('rgb(91, 91, 91)');
+
   return (
-    <div className="p-4">
-      <h1 className="text-3xl font-bold">Welcome to My App</h1>
-      <p className="mt-4">This is the homepage.</p>
+    <div style={{ backgroundColor }} className="min-h-screen bg-[url('/images/card-bg.png')] bg-repeat">
+
+    <div className="relative py-5 pt-20">
+
+        <div className="flex justify-center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VjLkP-xUwA8?si=qgjHizNSjDZS-Gbf" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+        </div>
+
+    </div>
     </div>
   );
 }

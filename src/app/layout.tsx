@@ -4,6 +4,15 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import './globals.css';
 import Navbar from './components/Navbar';
+import { Inter, Play } from 'next/font/google';
+
+const play = Play({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['400', '700'],
+});
+
+const inter = Inter({ subsets: ['latin'] });
 
 export default function RootLayout({
   children,
@@ -14,9 +23,10 @@ export default function RootLayout({
 
   return (
     <html lang="en">
-      <body className="min-h-screen">
-        <Navbar />
-        <main className="pt-16 container mx-auto"> 
+      <body className="min-h-screen {inter.className}">
+        <header className={play.className}>
+          <Navbar />
+        </header>        <main className="pt-16  mx-auto">
           {children}
         </main>
       </body>

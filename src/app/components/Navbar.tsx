@@ -7,9 +7,10 @@ import { usePathname } from 'next/navigation';
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
+  const [backgroundColor, setBackgroundColor] = useState('rgb(75, 31, 31)');
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-gray-800 p-4 z-10">
+    <nav className="fixed top-0 left-0 right-0 p-4 z-10" style={{ backgroundColor }} >
       <div className="container mx-auto flex justify-between items-center">
         <Link href="/" className="text-white font-bold text-xl">
           EK's Cards
@@ -41,19 +42,19 @@ export default function Navbar() {
           </Link>
           <Link 
             href="/pc-graded" 
-            className={`${pathname === '/pc' ? 'text-white' : 'text-gray-300 hover:text-white'} px-3 py-2`}
+            className={`${pathname === '/pc-graded' ? 'text-white' : 'text-gray-300 hover:text-white'} px-3 py-2`}
           >
             Graded Cards
           </Link>
           <Link 
             href="/pc-sets" 
-            className={`${pathname === '/pc' ? 'text-white' : 'text-gray-300 hover:text-white'} px-3 py-2`}
+            className={`${pathname === '/pc-sets' ? 'text-white' : 'text-gray-300 hover:text-white'} px-3 py-2`}
           >
             Complete Sets
           </Link>
           <Link 
             href="/pc-raw" 
-            className={`${pathname === '/inventory' ? 'text-white' : 'text-gray-300 hover:text-white'} px-3 py-2`}
+            className={`${pathname === '/pc-raw' ? 'text-white' : 'text-gray-300 hover:text-white'} px-3 py-2`}
           >
             Ungraded Cards
           </Link>
@@ -74,21 +75,21 @@ export default function Navbar() {
 
             <Link 
               href="/pc-graded" 
-              className={`${pathname === '/pc' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'} px-3 py-2 rounded-md`}
+              className={`${pathname === '/pc-graded' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'} px-3 py-2 rounded-md`}
               onClick={() => setIsOpen(false)}
             >
               Graded Cards
             </Link>
             <Link 
               href="/pc-sets" 
-              className={`${pathname === '/pc' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'} px-3 py-2 rounded-md`}
+              className={`${pathname === '/pc-sets' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'} px-3 py-2 rounded-md`}
               onClick={() => setIsOpen(false)}
             >
               Complete Sets
             </Link>
             <Link 
               href="/pc-raw" 
-              className={`${pathname === '/inventory' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'} px-3 py-2 rounded-md`}
+              className={`${pathname === '/pc-raw' ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white'} px-3 py-2 rounded-md`}
               onClick={() => setIsOpen(false)}
             >
               Ungraded Cards
