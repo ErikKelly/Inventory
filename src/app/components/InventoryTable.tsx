@@ -294,9 +294,9 @@ const getDirectImageUrl = (url: string): string => {
       width={96}  
       height={96}
       onError={(e) => {
-        // Replace with simple text
         const parent = e.currentTarget.parentNode;
-        if (parent) {
+        // Type check to ensure parent is an HTMLElement
+        if (parent && parent instanceof HTMLElement) {
           parent.innerHTML = "<span class='text-sm text-gray-500'>Image unavailable</span>";
         }
       }}
