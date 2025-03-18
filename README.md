@@ -65,7 +65,7 @@ git push -u origin main
 
 ### Step 6: Customize your site configuration
 
-The main configuration file is located at `src/config/siteConfig.ts`. Open this file and update the following settings:
+1. The main configuration file is located at `src/config/siteConfig.ts`. Open this file and update the following settings:
 
 ```typescript
 // src/config/siteConfig.ts
@@ -87,9 +87,14 @@ The key values you should change are:
 - `SHEET_TABS`: Comma-separated list of your sheet tab names
 - `PRIMARY_COLOR`: Main color theme (adjust to your preference)
 
+2. If you're using github pages to host your site, update the repo-path.js value. Else, if using a custom url, you can leave it as is. 
+```typescript
+const REPO_PATH = "/your-site-name";
+```
+
 ### Step 7: Update your github repository
 
-1. To to your https://github.com/your-site-name 
+1. To to your https://github.com/your-username/your-site-name 
 
 2. In this new GitHub repository, go to Settings > Pages
 
@@ -106,7 +111,7 @@ git commit -m "Second commit"
 git push -u origin main
 ```
 
-2. Wait for the GitHub Action to complete (check the Actions tab in your repository)
+2. Wait for the GitHub Action to complete (check the Actions tab in your repository to view status)
 
 3. Your site will be available at `https://your-username.github.io/your-repo-name/`
 
