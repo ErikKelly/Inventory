@@ -1,4 +1,4 @@
-# Create Your Own Website with This Template
+# Google Sheet Inventory Webpage 
 
 This repository contains a customizable Next.js website template that you can easily clone, modify with minimal configuration changes, and deploy to GitHub Pages as your own website.
 
@@ -20,8 +20,50 @@ npm install
 # or
 yarn install
 ```
+### Step 3: Create your repository
 
-### Step 3: Customize your site configuration
+1. To to your https://github.com/ account and create a new repository for your-site-name 
+
+2. In this new GitHub repository, go to Settings > Pages
+
+3. Set Source to "GitHub Actions"
+
+4. Go to Settings > Actions > General
+
+5. Scroll down to "Workflow permissions"
+
+6. Select "Read and write permissions" and save your changes.
+
+### Step 4: First push to your repository
+
+1. Back in your code, remove the existing Git history:
+```bash
+rm -rf .git
+```
+
+2. Initialize a new Git repository:
+```bash
+git init
+git add .
+git commit -m "Initial commit"
+```
+
+3. Connect your local repository to GitHub:
+```bash
+git remote add origin https://github.com/your-username/your-repo-name.git
+git push -u origin main
+```
+
+### Step 5: Set up your Google Sheet
+
+1. Create a Google Sheet with your data
+2. Make sure the sheet is published to the web:
+   - In your Google Sheet, go to File > Share > Publish to web
+   - Click "Publish" and select the entire document
+   - Make sure it's set to "Link" and not "Embed"
+3. Copy the Sheet ID from the URL (the long string between `/d/` and `/edit`) for the following configs
+
+### Step 6: Customize your site configuration
 
 The main configuration file is located at `src/config/siteConfig.ts`. Open this file and update the following settings:
 
@@ -37,8 +79,6 @@ export const SHEET_TABS = "Tab1, Tab2, Tab3";
 
 // UI Colors - customize the look and feel
 export const PRIMARY_COLOR = "rgb(75, 31, 31)";
-
-// Other site configuration...
 ```
 
 The key values you should change are:
@@ -47,52 +87,28 @@ The key values you should change are:
 - `SHEET_TABS`: Comma-separated list of your sheet tab names
 - `PRIMARY_COLOR`: Main color theme (adjust to your preference)
 
-### Step 4: Set up your Google Sheet
+### Step 7: Update your github repository
 
-1. Create a Google Sheet with your data
-2. Make sure the sheet is published to the web:
-   - In your Google Sheet, go to File > Share > Publish to web
-   - Click "Publish" and select the entire document
-   - Make sure it's set to "Link" and not "Embed"
-3. Copy the Sheet ID from the URL (the long string between `/d/` and `/edit`)
-4. Update the `SHEET_ID` in your siteConfig.ts file
+1. To to your https://github.com/your-site-name 
 
-### Step 5: Update repository information
+2. In this new GitHub repository, go to Settings > Pages
 
-1. Remove the existing Git history:
+4. Now set Build and deployment to "Deploy from a branch"
+
+5. Under Branch, make sure "gh-pages" is selected, not "Main"
+
+### Step 8: Push code changes
+
+1. Back in your code, push the changes to your configs to github
 ```bash
-rm -rf .git
-```
-
-2. Initialize a new Git repository:
-```bash
-git init
 git add .
-git commit -m "Initial commit"
-```
-
-3. Create a new repository on GitHub
-
-4. Connect your local repository to GitHub:
-```bash
-git remote add origin https://github.com/your-username/your-repo-name.git
+git commit -m "Second commit"
 git push -u origin main
 ```
 
-### Step 6: Deploy to GitHub Pages
+2. Wait for the GitHub Action to complete (check the Actions tab in your repository)
 
-1. In your GitHub repository, go to Settings > Pages
-
-2. Set Source to "GitHub Actions"
-
-3. Push your code to GitHub, which will trigger the deployment workflow:
-```bash
-git push
-```
-
-4. Wait for the GitHub Action to complete (check the Actions tab in your repository)
-
-5. Your site will be available at `https://your-username.github.io/your-repo-name/`
+3. Your site will be available at `https://your-username.github.io/your-repo-name/`
 
 ## Additional Customization
 
