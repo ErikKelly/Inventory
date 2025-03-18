@@ -1,6 +1,9 @@
 /** @type {import('next').NextConfig} */
 
-const REPO_PATH = require('./repo-path').default;
+// CHANGE THIS VALUE FOR GITHUB PAGES
+// Leave as empty string for custom domains
+// Set to "/your-repo-name" for GitHub Pages
+const REPO_PATH = "";
 
 const nextConfig = {
   output: process.env.NODE_ENV === 'production' ? 'export' : undefined,
