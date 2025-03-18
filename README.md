@@ -87,7 +87,7 @@ The key values you should change are:
 - `SHEET_TABS`: Comma-separated list of your sheet tab names
 - `PRIMARY_COLOR`: Main color theme (adjust to your preference)
 
-2. If you're using github pages to host your site, update the repo-path.js value. Else, if using a custom url, you can leave it as is. 
+2. If you're using github pages to host your site, update the REPO_PATH value in next.config.ts. Else, if using a custom url, you can leave it as is. 
 ```typescript
 const REPO_PATH = "/your-site-name";
 ```
