@@ -87,7 +87,7 @@ The key values you should change are:
 - `SHEET_TABS`: Comma-separated list of your sheet tab names
 - `PRIMARY_COLOR`: Main color theme (adjust to your preference)
 
-2. If you're using github pages to host your site, update the REPO_PATH value in next.config.ts. Else, if using a custom url, you can leave it as is. 
+2. If you're using github pages to host your site, update the REPO_PATH value in next.config.js. Else, if using a custom url, you can leave it as is. 
 ```typescript
 const REPO_PATH = "/your-site-name";
 ```
@@ -102,12 +102,14 @@ const REPO_PATH = "/your-site-name";
 
 5. Under Branch, make sure "gh-pages" is selected, not "Main"
 
+6. Save changes
+
 ### Step 8: Push code changes
 
 1. Back in your code, push the changes to your configs to github
 ```bash
 git add .
-git commit -m "Second commit"
+git commit -m "Config Updates"
 git push -u origin main
 ```
 
@@ -125,6 +127,14 @@ To use a custom domain:
 2. In the "Custom domain" section, add your domain
 3. Create/update `public/CNAME` file with your domain name
 4. Set up DNS records with your domain provider
+
+### Adding Images
+
+There are two ways to add images in your column output:
+
+1. Save images to /public/images and use /images/myfile.jpg in your google doc cell.
+- You'll then have to push these images to your github site for them to be used.
+2. Save them on an external server, such as Imgur and use a url ending with one of the following: jpeg, jpg, gif, png, webp
 
 ### Modifying Components
 
