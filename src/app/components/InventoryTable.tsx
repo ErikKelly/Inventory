@@ -75,7 +75,7 @@ export default function InventoryTable({ sheetId, tabNames }: InventoryTableProp
           // Remove the extra wrapping that Google adds
           const jsonData = jsonText.substring(jsonText.indexOf('(') + 1, jsonText.lastIndexOf(')'));
           const data = JSON.parse(jsonData);
-          
+         /* 
           // Extract headers from columns
           const headers = data.table.cols.map((col: any) => col.label);
           
@@ -87,7 +87,26 @@ export default function InventoryTable({ sheetId, tabNames }: InventoryTableProp
             });
             return item;
           });
-          
+          */
+         // Extract headers from columns with fallbacks (TypeScript-friendly version)
+const headers: string[] = data.table.cols.map((col: any, index: number) => {
+  return (col.label && col.label.trim() !== '') ? col.label : (col.id || `Column_${index + 1}`);
+});
+
+// Process rows into properly structured objects
+const items: InventoryItem[] = data.table.rows.map((row: any) => {
+  const item: InventoryItem = {};
+  headers.forEach((header: string, index: number) => {
+    if (row.c && row.c[index] && row.c[index].v !== undefined) {
+      item[header] = String(row.c[index].v);
+    } else {
+      item[header] = '';
+    }
+  });
+  return item;
+});
+
+
           loadedSheets.push({ name: sheetName, items });
         } catch (e) {
           console.error(`Error loading sheet ${sheetName}:`, e);
